@@ -1,0 +1,15 @@
+# local package
+-e .
+
+## external requirements
+## third party packages
+numpy
+pandas
+matplotlib
+scikit-learn
+dvc
+dvc[gdrive]
+streamlit
+mlflow
+ensure
+python-box
