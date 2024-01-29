@@ -1,0 +1,19 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python src/SMSClassifier/pipeline/stage_01_data_ingestion.py
+    deps:
+    - path: src/SMSClassifier/pipeline/stage_01_data_ingestion.py
+      hash: md5
+      md5: ad545d897b215ff70920f499c5822c7e
+      size: 929
+    outs:
+    - path: artifacts/data_ingestion/SMS-Spam
+      hash: md5
+      md5: e84e4ead589d6e86f7d694a7f9d86e0d.dir
+      size: 503663
+      nfiles: 1
+    - path: artifacts/data_ingestion/SMS-Spam.zip
+      hash: md5
+      md5: 8eedf9c831c5c342a265af2a04449c8a
+      size: 216360
