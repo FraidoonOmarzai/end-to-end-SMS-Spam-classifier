@@ -22,3 +22,7 @@ pip install -r requirements.txt
 ```
 
 - define logging and utils
+
+- **Data Ingestion**
+
+- **EDA and go through the project in jupyter notebook**
