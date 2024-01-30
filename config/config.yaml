@@ -5,3 +5,8 @@ data_ingestion:
   data_url: https://github.com/FraidoonOmarzai/data/raw/main/SMS-Spam.zip
   local_data_file: artifacts/data_ingestion/SMS-Spam.zip
   unzip_dir: artifacts/data_ingestion
+
+data_validation:
+  root_dir: artifacts/data_validation
+  unzip_dir: artifacts/data_ingestion/SMS-Spam
+  status: artifacts/data_validation/status.txt

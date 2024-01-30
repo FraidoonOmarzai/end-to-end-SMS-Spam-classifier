@@ -6,3 +6,12 @@ stages:
     outs:
       - artifacts/data_ingestion/SMS-Spam.zip
       - artifacts/data_ingestion/SMS-Spam
+
+  data_validation:
+    cmd: python src/SMSClassifier/pipeline/stage_02_data_validation.py
+    deps:
+      - src/SMSClassifier/pipeline/stage_02_data_validation.py
+      - config/config.yaml
+      - artifacts/data_ingestion/SMS-Spam
+    outs:
+      - artifacts/data_validation/status.txt
