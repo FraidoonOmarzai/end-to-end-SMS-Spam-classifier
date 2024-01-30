@@ -39,3 +39,5 @@ pip install -r requirements.txt
 - **EDA and go through the project in jupyter notebook**
 
 - **Data Validation**
+
+- **Data Transformation**

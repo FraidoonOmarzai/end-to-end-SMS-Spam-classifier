@@ -15,3 +15,11 @@ stages:
       - artifacts/data_ingestion/SMS-Spam
     outs:
       - artifacts/data_validation/status.txt
+
+  data_transformation:
+    cmd: python src/SMSClassifier/pipeline/stage_03_data_transformation.py
+    deps:
+      - src/SMSClassifier/pipeline/stage_03_data_transformation.py
+      - artifacts/data_ingestion/SMS-Spam/spam.csv
+    outs:
+      - artifacts/data_transformation/clean_df.csv

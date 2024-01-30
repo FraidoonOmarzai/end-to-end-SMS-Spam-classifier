@@ -15,3 +15,9 @@ class DataValidationConfig:
     root_dir: Path
     unzip_dir: Path
     status: str
+
+
+@dataclass
+class DataTransformationConfig:
+    root_dir: Path
+    data_path: Path

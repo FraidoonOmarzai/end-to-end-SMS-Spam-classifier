@@ -27,8 +27,8 @@ stages:
       nfiles: 1
     - path: config/config.yaml
       hash: md5
-      md5: 575ef9156007f4a0ec6a0ead67d27e12
-      size: 411
+      md5: c6d3603c888283d2252ab45b90c2f219
+      size: 533
     - path: src/SMSClassifier/pipeline/stage_02_data_validation.py
       hash: md5
       md5: 88003cc0ca48607db21b746587661d6d
@@ -38,3 +38,19 @@ stages:
       hash: md5
       md5: 76681957d45f52e2323fcc90b1a3f023
       size: 37
+  data_transformation:
+    cmd: python src/SMSClassifier/pipeline/stage_03_data_transformation.py
+    deps:
+    - path: artifacts/data_ingestion/SMS-Spam/spam.csv
+      hash: md5
+      md5: 008dcf9ca6aab621d3b3831db6815867
+      size: 503663
+    - path: src/SMSClassifier/pipeline/stage_03_data_transformation.py
+      hash: md5
+      md5: 8b31e0395ef3a9fb43be6964c1f2ae28
+      size: 950
+    outs:
+    - path: artifacts/data_transformation/clean_df.csv
+      hash: md5
+      md5: 6726e79aa1986f70564c950e4db0f21a
+      size: 238560
