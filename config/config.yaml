@@ -14,3 +14,7 @@ data_validation:
 data_transformation:
   root_dir: artifacts/data_transformation
   data_path: artifacts/data_ingestion/SMS-Spam/spam.csv
+
+model_training:
+  root_dir: artifacts/model_training
+  df: artifacts/data_transformation/clean_df.csv

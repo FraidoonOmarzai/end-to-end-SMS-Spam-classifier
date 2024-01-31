@@ -21,3 +21,9 @@ class DataValidationConfig:
 class DataTransformationConfig:
     root_dir: Path
     data_path: Path
+
+
+@dataclass
+class ModelTrainingConfig:
+    root_dir: Path
+    df: Path

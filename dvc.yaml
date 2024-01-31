@@ -23,3 +23,12 @@ stages:
       - artifacts/data_ingestion/SMS-Spam/spam.csv
     outs:
       - artifacts/data_transformation/clean_df.csv
+
+  model_training:
+    cmd: python src/SMSClassifier/pipeline/stage_04_model_training.py
+    deps:
+      - src/SMSClassifier/pipeline/stage_04_model_training.py
+      - artifacts/data_transformation/clean_df.csv
+    outs:
+      - artifacts/model_training/tfidfv.joblib
+      - artifacts/model_training/model.joblib

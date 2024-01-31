@@ -41,3 +41,5 @@ pip install -r requirements.txt
 - **Data Validation**
 
 - **Data Transformation**
+
+- **model training**
