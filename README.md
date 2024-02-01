@@ -43,3 +43,5 @@ pip install -r requirements.txt
 - **Data Transformation**
 
 - **model training**
+
+- using `streamlit` to create a web page for our project

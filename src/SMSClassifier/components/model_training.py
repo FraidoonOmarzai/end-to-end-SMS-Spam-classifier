@@ -45,4 +45,4 @@ class ModelTraining:
         # save the model
         # save_bin(model, os.path.join(self.config.root_dir, 'model.joblib'))
         joblib.dump(model, os.path.join(self.config.root_dir, 'model.joblib'))
-        joblib.dump(model, os.path.join(self.config.root_dir, 'tfidfv.joblib'))
+        joblib.dump(tfv, os.path.join(self.config.root_dir, 'tfidfv.joblib'))
