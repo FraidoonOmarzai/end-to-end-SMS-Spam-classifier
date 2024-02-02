@@ -45,3 +45,19 @@ pip install -r requirements.txt
 - **model training**
 
 - using `streamlit` to create a web page for our project
+
+- **Docker**
+
+    - adding code to docker file
+    - bulid the docker image
+    ```bash
+    docker build -t sms-app .
+    docker ps
+    docker images
+    ```
+    - running our app using docker
+
+    ```bash
+    docker run -p 8080:8080 sms-app
+    htpp://localhost:8080
+    ```
