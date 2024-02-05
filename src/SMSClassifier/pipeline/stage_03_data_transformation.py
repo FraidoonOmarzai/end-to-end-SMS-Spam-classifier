@@ -1,5 +1,5 @@
 from src.SMSClassifier.config.configuration import ConfigurationManager
-from src.SMSClassifier.components.data_transformation import DataTransformation
+from src.SMSClassifier.components.data_transformation import DataTransformation1
 from src.SMSClassifier.logging import logger
 
 
@@ -13,8 +13,10 @@ class DataTransformationTrainingPipeline:
     def main(self):
         config = ConfigurationManager()
         data_transformation_config = config.get_data_transformation_config()
-        data_transformation = DataTransformation(data_transformation_config)
-        data_transformation.prepare_data()
+        data_transformation = DataTransformation1(data_transformation_config)
+        df = data_transformation.clean_data()
+        df = data_transformation.tfidf_vectorizer(df)
+        data_transformation.train_test_splits(df)
 
 
 if __name__ == '__main__':
