@@ -26,4 +26,4 @@ class DataTransformationConfig:
 @dataclass
 class ModelTrainingConfig:
     root_dir: Path
-    df: Path
+    train_path: Path

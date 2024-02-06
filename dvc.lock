@@ -27,8 +27,8 @@ stages:
       nfiles: 1
     - path: config/config.yaml
       hash: md5
-      md5: 951e6384e551c5364fa6951449343e55
-      size: 640
+      md5: 09e2a23f50a3b426d33b9e6f6afe19c8
+      size: 645
     - path: src/SMSClassifier/pipeline/stage_02_data_validation.py
       hash: md5
       md5: 88003cc0ca48607db21b746587661d6d
@@ -65,10 +65,10 @@ stages:
   model_training:
     cmd: python src/SMSClassifier/pipeline/stage_04_model_training.py
     deps:
-    - path: artifacts/data_transformation/clean_df.csv
+    - path: artifacts/data_transformation/train.csv
       hash: md5
-      md5: 6726e79aa1986f70564c950e4db0f21a
-      size: 238560
+      md5: 7cc03c6c6f214bb9af714f2297d2f192
+      size: 39180458
     - path: src/SMSClassifier/pipeline/stage_04_model_training.py
       hash: md5
       md5: 4ce30da643f791e76c6c610616381146
@@ -76,9 +76,5 @@ stages:
     outs:
     - path: artifacts/model_training/model.joblib
       hash: md5
-      md5: 8b39a9554ac5286c5893ff6c157b7292
-      size: 80791
-    - path: artifacts/model_training/tfidfv.joblib
-      hash: md5
-      md5: 8b39a9554ac5286c5893ff6c157b7292
-      size: 80791
+      md5: 7a462c2df1b0b3568d090a5337deff3c
+      size: 114263

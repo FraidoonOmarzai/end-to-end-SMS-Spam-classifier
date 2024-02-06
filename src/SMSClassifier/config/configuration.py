@@ -53,6 +53,6 @@ class ConfigurationManager:
 
         model_training_config = ModelTrainingConfig(
             root_dir=config.root_dir,
-            df=config.df,
+            train_path=config.train_path,
         )
         return model_training_config

@@ -15,34 +15,16 @@ class ModelTraining:
         self.config = config
 
     def training_pipeline(self):
-        df = pd.read_csv(self.config.df, encoding='latin-1')
-        # print(df.head(2))
+        train_path = pd.read_csv(self.config.train_path)
 
-        # tfidf vectorizer
-        tfv = TfidfVectorizer(max_features=2500)
-        X = tfv.fit_transform(df['msg'].values.astype('U'))
-
-        y = df.target
-
-        # balance the dataset
-        sampler = RandomOverSampler(random_state=42)
-        X_sm, y_sm = sampler.fit_resample(X, y)
-
-        # train test split
-        X_train, X_test, y_train, y_test = train_test_split(
-            X_sm, y_sm, test_size=0.20, random_state=42)
+        X_train = train_path.drop('target', axis=1)
+        y_train = train_path['target']
 
         # train the model
         model = MultinomialNB()
         model.fit(X_train, y_train)
 
-        # model evaluation
-        y_pred = model.predict(X_test)
-        logger.info(confusion_matrix(y_test, y_pred))
-
-        logger.info(classification_report(y_test, y_pred))
+        logger.info(f"Model train score: {model.score(X_train, y_train)}")
 
         # save the model
-        # save_bin(model, os.path.join(self.config.root_dir, 'model.joblib'))
         joblib.dump(model, os.path.join(self.config.root_dir, 'model.joblib'))
-        joblib.dump(tfv, os.path.join(self.config.root_dir, 'tfidfv.joblib'))
