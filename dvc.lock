@@ -52,12 +52,16 @@ stages:
     outs:
     - path: artifacts/data_transformation/test.csv
       hash: md5
-      md5: 6e29d830cc5551528e36d34eaceb2d3a
-      size: 13073569
+      md5: 5f4ffa3e788d9710253a081a06b2e2bf
+      size: 13079398
+    - path: artifacts/data_transformation/tfidfv.joblib
+      hash: md5
+      md5: 8cc388ff6d285f6fbef4be0fcfa40b82
+      size: 135474
     - path: artifacts/data_transformation/train.csv
       hash: md5
-      md5: 9810359f7ccd1bef0bde1bd11bc62e6a
-      size: 39186287
+      md5: 7cc03c6c6f214bb9af714f2297d2f192
+      size: 39180458
   model_training:
     cmd: python src/SMSClassifier/pipeline/stage_04_model_training.py
     deps:

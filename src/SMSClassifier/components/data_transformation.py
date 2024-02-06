@@ -15,6 +15,7 @@ from collections import Counter
 
 
 import os
+import joblib
 
 
 class DataTransformation1:
@@ -71,6 +72,8 @@ class DataTransformation1:
         df_new['target'] = y
 
         logger.info(f'after tfidf data shape: {df_new.shape}')
+
+        joblib.dump(tfv, os.path.join(self.config.root_dir, 'tfidfv.joblib'))
 
         return df_new
 
