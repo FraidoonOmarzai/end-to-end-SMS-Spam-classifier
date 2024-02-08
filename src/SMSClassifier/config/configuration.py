@@ -3,7 +3,8 @@ from src.SMSClassifier.utils.common import read_yaml, create_directories
 from src.SMSClassifier.entity.config_entity import (DataIngestionConfig,
                                                     DataValidationConfig,
                                                     DataTransformationConfig,
-                                                    ModelTrainingConfig)
+                                                    ModelTrainingConfig,
+                                                    ModelEvaluationConfig)
 
 
 class ConfigurationManager:
@@ -56,3 +57,18 @@ class ConfigurationManager:
             train_path=config.train_path,
         )
         return model_training_config
+
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        config = self.config_path.model_evaluation
+        create_directories([config.root_dir])
+
+        model_evaluation_config = ModelEvaluationConfig(
+            root_dir=config.root_dir,
+            test_path=config.test_path,
+            model_path=config.model_path,
+            experiment_name=config.experiment_name,
+            mlflow_uri=config.mlflow_uri,
+            run_name=config.run_name,
+            metric_file_name = config.metric_file_name
+        )
+        return model_evaluation_config

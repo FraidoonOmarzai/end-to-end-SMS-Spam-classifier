@@ -1,9 +1,5 @@
 from src.SMSClassifier.logging import logger
-from sklearn.feature_extraction.text import TfidfVectorizer
-from imblearn.over_sampling import RandomOverSampler
-from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
-from sklearn.metrics import confusion_matrix, classification_report
 from src.SMSClassifier.entity.config_entity import ModelTrainingConfig
 import joblib
 import pandas as pd

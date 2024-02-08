@@ -27,3 +27,14 @@ class DataTransformationConfig:
 class ModelTrainingConfig:
     root_dir: Path
     train_path: Path
+
+
+@dataclass
+class ModelEvaluationConfig:
+    root_dir: Path
+    test_path: Path
+    model_path: Path
+    experiment_name: str
+    mlflow_uri: str
+    run_name: str
+    metric_file_name: str

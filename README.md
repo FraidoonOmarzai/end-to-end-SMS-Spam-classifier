@@ -44,6 +44,28 @@ pip install -r requirements.txt
 
 - **model training**
 
+- **Model Evaluation**
+
+    - Adding mlflow
+
+    ```bash
+    MLFLOW_TRACKING_URI=https://dagshub.com/fraidoon_omarzai/end-to-end-SMS-Spam-classifier.mlflow \
+    MLFLOW_TRACKING_USERNAME=fraidoon_omarzai \
+    MLFLOW_TRACKING_PASSWORD=bc25b16bd5206328d8899cf34377f26ad71d1420 \
+    python script.py
+
+
+    # run in cmd windows
+    %env:MLFLOW_TRACKING_URI="https://dagshub.com/fraidoon_omarzai/end-to-end-SMS-Spam-classifier.mlflow"
+    $env:MLFLOW_TRACKING_USERNAME="fraidoon_omarzai"
+    $env:MLFLOW_TRACKING_PASSWORD="bc25b16bd5206328d8899cf34377f26ad71d1420"
+
+    # run in mac/linux
+    export MLFLOW_TRACKING_URI=https://dagshub.com/fraidoon_omarzai/end-to-end-SMS-Spam-classifier.mlflow
+    export MLFLOW_TRACKING_USERNAME=fraidoon_omarzai 
+    export MLFLOW_TRACKING_PASSWORD=bc25b16bd5206328d8899cf34377f26ad71d1420
+    ```
+
 - using `streamlit` to create a web page for our project
 
 - **Docker**
