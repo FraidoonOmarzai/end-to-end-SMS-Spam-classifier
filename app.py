@@ -30,7 +30,7 @@ def clean_msg(msg, stemmer=PorterStemmer(), stop_words=set(stopwords.words('engl
 
 
 # loading tfidf and saved model
-tfidf = joblib.load(Path('artifacts/model_training/tfidfv.joblib'))
+tfidf = joblib.load(Path('artifacts/data_transformation/tfidfv.joblib'))
 model = joblib.load(Path('artifacts/model_training/model.joblib'))
 
 
